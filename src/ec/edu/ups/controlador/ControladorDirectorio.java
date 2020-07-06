@@ -62,37 +62,37 @@ public class ControladorDirectorio {
     
     //metodo para listar los archivos ocultos
     public List<String> listarArchivosOcultos(String ruta) {
-        List<String> listarDirectorioOculto = new ArrayList<>();
-        listarDirectorioOculto.clear();
+        List<String> ArchivosOcultos = new ArrayList<>();
+        ArchivosOcultos.clear();
         archivo = new File(ruta);
         archivos = archivo.listFiles();
         for (File directorioOculto : archivos) {
             if (directorioOculto.isHidden() && directorioOculto.isFile()) {
-                listarDirectorioOculto.add(directorioOculto.getName());
+                ArchivosOcultos.add(directorioOculto.getName());
             }
         }
-        return listarDirectorioOculto;
+        return ArchivosOcultos;
     }
     
     //metodo para listar los directorios ocultos
     public List<String> listarDirectoriosOcultos(String ruta) {
-        List<String> listarDirectorioOculto = new ArrayList<>();
-        listarDirectorioOculto.clear();
+        List<String> DirectorioOculto = new ArrayList<>();
+        DirectorioOculto.clear();
         archivo = new File(ruta);
         archivos = archivo.listFiles();
         for (File directorioOculto : archivos) {
             if (directorioOculto.isHidden() && directorioOculto.isDirectory()) {
-                listarDirectorioOculto.add(directorioOculto.getName());
+                DirectorioOculto.add(directorioOculto.getName());
             }
         }
-        return listarDirectorioOculto;
+        return DirectorioOculto;
     }
 
     
     // metodo para crear directorio
      public void crearDirectorio(String nombre, String ruta) throws IOException {
         archivo = new File(ruta + File.separator + nombre);
-        if (archivo.exists() == false && archivo.isDirectory()) {
+        if (archivo.exists() == false) {
             archivo.mkdir();
         }else{
             archivo.createNewFile();

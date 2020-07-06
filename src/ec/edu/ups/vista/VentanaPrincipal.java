@@ -46,15 +46,17 @@ private void mostrarLista(List<String> rutaL) {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnListarD = new javax.swing.JButton();
-        btnListarA = new javax.swing.JButton();
-        btnListarDO = new javax.swing.JButton();
-        btnMostrar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jMostrarInformacion = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaDeDirectorios = new javax.swing.JList<>();
+        btnListarDO = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jMostrarInformacion = new javax.swing.JTextArea();
+        btnListarD = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnMostrar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        btnListarA = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuGestionar = new javax.swing.JMenu();
         jCrear = new javax.swing.JMenuItem();
@@ -63,11 +65,36 @@ private void mostrarLista(List<String> rutaL) {
         jSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jScrollPane2.setViewportView(listaDeDirectorios);
+
+        btnListarDO.setText("Listar Directorios Ocultos");
+        btnListarDO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarDOActionPerformed(evt);
+            }
+        });
+
+        jMostrarInformacion.setColumns(20);
+        jMostrarInformacion.setRows(5);
+        jScrollPane1.setViewportView(jMostrarInformacion);
 
         btnListarD.setText("Listar Directorios");
         btnListarD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarDActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Ruta:");
+
+        btnMostrar.setText("Mostrar Informacion");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
             }
         });
 
@@ -78,27 +105,62 @@ private void mostrarLista(List<String> rutaL) {
             }
         });
 
-        btnListarDO.setText("Listar Directorios Ocultos");
-        btnListarDO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarDOActionPerformed(evt);
-            }
-        });
-
-        btnMostrar.setText("Mostrar Informacion");
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
-            }
-        });
-
-        jMostrarInformacion.setColumns(20);
-        jMostrarInformacion.setRows(5);
-        jScrollPane1.setViewportView(jMostrarInformacion);
-
-        jTextField1.setText("ruta: ");
-
-        jScrollPane2.setViewportView(listaDeDirectorios);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(btnListarD)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnListarDO)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnListarA)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnMostrar)
+                                .addGap(76, 76, 76))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(11, Short.MAX_VALUE))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(214, 214, 214))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnListarDO)
+                    .addComponent(btnListarD)
+                    .addComponent(btnListarA))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnMostrar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 7, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
 
         jMenuGestionar.setText("Gestionar Directorio");
 
@@ -146,53 +208,11 @@ private void mostrarLista(List<String> rutaL) {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(btnListarD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnListarA)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnListarDO)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnMostrar)
-                .addGap(160, 160, 160))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnListarD)
-                    .addComponent(btnListarA)
-                    .addComponent(btnListarDO))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(btnMostrar)
-                .addGap(22, 22, 22))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -229,7 +249,7 @@ private void mostrarLista(List<String> rutaL) {
         String ruta = jTextField1.getText();
 
         if (crearDirectorio != null && ruta != null) {
-            JOptionPane.showMessageDialog(this, "Se ha creado satisfactoriamente el directorio");
+            JOptionPane.showMessageDialog(this, "Se ha creado correctamente");
             try {
                 controladorDirectorio.crearDirectorio(crearDirectorio, ruta);
                 limpiarLista();
@@ -239,7 +259,7 @@ private void mostrarLista(List<String> rutaL) {
                 Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (crearDirectorio == null) {
-            JOptionPane.showMessageDialog(this, "No se puede crear ningun directorio no se ha ingresado nada");
+            JOptionPane.showMessageDialog(this, "Compa no se ha ingresado nada");
         } else if (ruta.equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese una ruta para crear un nuevo directorio");
         }
@@ -410,9 +430,11 @@ public boolean comprobar(String ruta) {
     private javax.swing.JButton btnMostrar;
     private javax.swing.JMenuItem jCrear;
     private javax.swing.JMenuItem jEliminar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuGestionar;
     private javax.swing.JTextArea jMostrarInformacion;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jRenombrar;
     private javax.swing.JMenuItem jSalir;
     private javax.swing.JScrollPane jScrollPane1;
