@@ -219,13 +219,10 @@ private void mostrarLista(List<String> rutaL) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEliminarActionPerformed
-         String eliminarDirectorio = "";
-        eliminarDirectorio = JOptionPane.showInputDialog("Ingrese nombre de archivo a eliminar");
+         String eliminarDirectorio = listaDeDirectorios.getSelectedValue(); 
         if (eliminarDirectorio == null) {
             JOptionPane.showMessageDialog(this, "No se ha eliminado ningun archivo");
-        } else {
-            String rutaEliminara =jTextField1.getText() + File.separator + eliminarDirectorio;
-            if (comprobar(rutaEliminara)) {
+        } else {  
                 controladorDirectorio.eliminarDirectorio(eliminarDirectorio, jTextField1.getText());
                 int confirmacion = JOptionPane.showConfirmDialog(this, "Seguro de eliminar este archivo");
                 if (confirmacion == JOptionPane.YES_OPTION) {
@@ -234,7 +231,7 @@ private void mostrarLista(List<String> rutaL) {
                     List<String> lista = controladorDirectorio.listarDirectorios(jTextField1.getText());
                     mostrarLista(lista);
                 }
-            } else {
+             else {
                 JOptionPane.showMessageDialog(this, "Este archivo no existe intente otra vez");
             }
 
